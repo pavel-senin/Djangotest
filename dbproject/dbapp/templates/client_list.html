@@ -1,0 +1,8 @@
+<!-- client_list.html -->
+
+<h1>Client List</h1>
+<ul>
+  {% for client in clients %}
+    <li><a href="{% url 'client_detail' client.id %}">{{ client.name }}</a></li>
+  {% endfor %}
+</ul>

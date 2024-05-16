@@ -1,0 +1,13 @@
+<!-- client_detail.html -->
+
+<h1>{{ client.name }}</h1>
+<p>Phone: {{ client.phone_number }}</p>
+<p>Email: {{ client.email }}</p>
+<p>Address: {{ client.address }}</p>
+
+<h2>Orders:</h2>
+<ul>
+  {% for order in orders %}
+    <li><a href="{% url 'order_detail' order.id %}">Order #{{ order.id }}</a></li>
+  {% endfor %}
+</ul>

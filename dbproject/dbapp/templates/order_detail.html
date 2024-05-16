@@ -1,0 +1,13 @@
+<!-- order_detail.html -->
+
+<h1>Order #{{ order.id }}</h1>
+<p>Status: {{ order.status }}</p>
+<p>Total Amount: ${{ order.total_amount }}</p>
+<p>Order Date: {{ order.order_date }}</p>
+
+<h2>Products:</h2>
+<ul>
+  {% for item in order.orderitem_set.all %}
+    <li>{{ item.product.name }} - Quantity: {{ item.quantity }} - Item Total: ${{ item.item_total }}</li>
+  {% endfor %}
+</ul>

@@ -1,0 +1,14 @@
+<!-- product_detail.html -->
+
+<h1>{{ product.name }}</h1>
+<p>Category: {{ product.category }}</p>
+<p>Price: ${{ product.price }}</p>
+<p>Description: {{ product.description }}</p>
+<img src="{{ product.image.url }}" alt="{{ product.name }}" />
+
+<h2>Orders:</h2>
+<ul>
+  {% for order in orders %}
+    <li><a href="{% url 'order_detail' order.order.id %}">Order #{{ order.order.id }}</a> - Quantity: {{ order.quantity }}</li>
+  {% endfor %}
+</ul>
