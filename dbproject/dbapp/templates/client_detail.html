@@ -1,6 +1,7 @@
 <!-- client_detail.html -->
 
 <h1>{{ client.name }}</h1>
+<h1>CLIENT #{{ client.id }}</h1>
 <p>Phone: {{ client.phone_number }}</p>
 <p>Email: {{ client.email }}</p>
 <p>Address: {{ client.address }}</p>
@@ -11,3 +12,4 @@
     <li><a href="{% url 'order_detail' order.id %}">Order #{{ order.id }}</a></li>
   {% endfor %}
 </ul>
+<a href="{% url 'ordered_products' user_id=client.id %}">Ordered Products</a>
