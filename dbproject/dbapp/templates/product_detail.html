@@ -1,14 +1,24 @@
 <!-- product_detail.html -->
 
-<h1>{{ product.name }}</h1>
-<p>Category: {{ product.category }}</p>
-<p>Price: ${{ product.price }}</p>
-<p>Description: {{ product.description }}</p>
-<img src="{{ product.image.url }}" alt="{{ product.name }}" />
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product Detail</title>
+</head>
+<body>
+    <h1>{{ product.name }}</h1>
+    <p>Description: {{ product.description }}</p>
+    <p>Price: ${{ product.price }}</p>
+    <p>Quantity: {{ product.quantity }}</p>
+    <p>Date Added: {{ product.date_added }}</p>
+    {% if product.image %}
+        <p>Product Image:</p>
+        <img src="{{ product.image.url }}" alt="Product Image">
+    {% endif %}
+    <a href="{% url 'product_update' product.id %}">Edit</a>
+    <a href="{% url 'product_delete' product.id %}">Delete</a>
+    <a href="{% url 'product_list' %}">Back to list</a>
+</body>
+</html>
 
-<h2>Orders:</h2>
-<ul>
-  {% for order in orders %}
-    <li><a href="{% url 'order_detail' order.order.id %}">Order #{{ order.order.id }}</a> - Quantity: {{ order.quantity }}</li>
-  {% endfor %}
-</ul>
