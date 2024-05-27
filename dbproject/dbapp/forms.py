@@ -9,9 +9,9 @@ class ClientForm(forms.ModelForm):
 class ProductForm(forms.ModelForm):
     class Meta:
         model = Product
-        fields = ['name', 'description', 'price', 'quantity', 'date_added', 'image']  # Добавлено поле image
+        fields = ['name', 'category', 'description', 'price', 'quantity', 'image']  # Добавлено поле image
 
 class OrderForm(forms.ModelForm):
     class Meta:
         model = Order
-        fields = ['client', 'status', 'total_amount', 'order_date']
+        fields = ['client', 'status', 'total_amount']

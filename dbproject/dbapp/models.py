@@ -12,6 +12,7 @@ class Product(models.Model):
     name = models.CharField(max_length=255)
     category = models.CharField(max_length=100, default='Uncategorized')
     price = models.DecimalField(max_digits=10, decimal_places=2)
+    quantity = models.IntegerField(default=0)
     description = models.TextField()
     image = models.ImageField(upload_to='product_images/', default='product_images/default.jpg')  # Используйте свой путь к изображению-заглушке
 

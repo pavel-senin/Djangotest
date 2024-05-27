@@ -7,6 +7,7 @@
 <body>
     <h1>{{ form.instance.id|yesno:"Edit Order,Create Order" }}</h1>
     <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Save</button>
     </form>
